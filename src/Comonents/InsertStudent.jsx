@@ -33,7 +33,7 @@ export default function InsertStudent() {
 
     useEffect(() => {
         axios
-            .get(`${host}/api/subject/getSubject`)
+            .get(`https://studentgrade-server.vercel.app/api/subject/getSubject`)
             .then((response) => {
                 setSubjects(response.data); // Assuming response.data is an array of subject objects
             })
@@ -83,7 +83,7 @@ export default function InsertStudent() {
         if (!validateForm()) return; // Stop submission if validation fails
 
         axios
-            .post(`${host}/api/student/studentInsert`, formData)
+            .post(`https://studentgrade-server.vercel.app/api/student/studentInsert`, formData)
             .then((res) => {
                 console.log(res);
                 setFormData({

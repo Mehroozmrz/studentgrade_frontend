@@ -15,7 +15,7 @@ export default function ViewStudent() {
 
     useEffect(() => {
         axios
-            .get(`${host}/api/student/getStudent`)
+            .get(`https://studentgrade-server.vercel.app/api/student/getStudent`)
             .then((response) => {
                 console.log(response.data);
                 setStudents(response.data);
@@ -54,7 +54,7 @@ export default function ViewStudent() {
             confirmButtonText: 'Yes, delete it!',
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`${host}/api/student/deleteStudent/${id}`)
+                axios.delete(`https://studentgrade-server.vercel.app/api/student/deleteStudent/${id}`)
                     .then((response) => {
                         setDeleteStudent(!deletedStudent);
                     })

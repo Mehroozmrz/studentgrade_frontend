@@ -22,7 +22,7 @@ export default function InsertSubjects() {
             return;
         }
 
-        axios.post(`${host}/api/subject/subjectInsert`, { subjectName })
+        axios.post(`https://studentgrade-server.vercel.app/api/subject/subjectInsert`, { subjectName })
             .then((res) => {
                 console.log(res);
                 setSubjectName(""); // Clear subject name after submission

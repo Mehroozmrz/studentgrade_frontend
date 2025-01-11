@@ -16,7 +16,7 @@ export default function ViewSubjects({ submitted }) {
 
     useEffect(() => {
         axios
-            .get(`${host}/api/subject/getSubject`)  
+            .get(`https://studentgrade-server.vercel.app/api/subject/getSubject`)  
             .then((response) => {
                 setSubjects(response.data);
             })
@@ -40,7 +40,7 @@ export default function ViewSubjects({ submitted }) {
         }
 
         axios
-            .put(`${host}/api/subject/updateSubject/${editSubject._id}`, editSubject)
+            .put(`https://studentgrade-server.vercel.app/api/subject/updateSubject/${editSubject._id}`, editSubject)
             .then((response) => {
                 setOpenEditDialog(false);
                 setError(""); 
@@ -61,7 +61,7 @@ export default function ViewSubjects({ submitted }) {
             confirmButtonText: 'Yes, delete it!',
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`${host}/api/subject/deleteSubject/${id}`)
+                axios.delete(`https://studentgrade-server.vercel.app/api/subject/deleteSubject/${id}`)
                     .then((response) => {
                         setDeleteSubject(!deletedSubject);
                     })
